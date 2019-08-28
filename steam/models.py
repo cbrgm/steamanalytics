@@ -13,7 +13,7 @@ class Product:
     price = 0.00
     price_discount = 0.00
     image_url = ''
-    metacritic_score = ''
     review_summary = ''
     reviews_total = 0
-    languages =  []
+    languages = []
+    is_dlc = False

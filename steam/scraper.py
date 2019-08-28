@@ -60,8 +60,10 @@ class Scraper:
         # only allow steam app urls
         pattern = re.compile("https://store.steampowered.com/app/[\d]*/.+")
         if not pattern.match(url):
-            print('url {} does not match the allowed url format... skipping)'.format(url))
+            print('{} does not match the allowed url format... skipping'.format(url))
             return None
+
+        print("{}...".format(url))
 
         # use a cookie to skip age verification and mature content confirmation
         cookies = {'birthtime': '568022401', 'mature_content': '1'}

@@ -74,7 +74,11 @@ def get_total_pages():
     """
     returns the total amount of pages from the steam store search
     """
-    return 2551
+    resp = requests.get("https://store.steampowered.com/search/?hide_filtered_results_warning=1&ignore_preferences=1&page=1") 
+    html = soup(resp.content, "html.parser")
+
+    total_pages = html.find('div', {'class': 'search_pagination'}).find('div', {'class': 'search_pagination_right'}).findAll('a')[-2].text
+    return int(total_pages)
 
 
 def setup_db(db, db_name, db_table):

@@ -9,14 +9,14 @@ import os
 def main():
 
     # load the config
-    config_interval = os.environ['SCRAPE_INTERVAL']
-    config_offset = os.environ['SCRAPE_OFFSET']
-    config_rethink_host = 'localhost'
-    config_rethink_port = 28015
-    config_rethink_db = 'steam'
-    config_rethink_table = 'products'
-    config_rethink_user = 'admin'
-    config_rethink_pass = ''
+    config_interval = int(os.environ['SCRAPE_INTERVAL'])
+    config_offset = int(os.environ['SCRAPE_OFFSET'])
+    config_rethink_host = os.environ['RETHINK_HOST']
+    config_rethink_port = int(os.environ['RETHINK_PORT'])
+    config_rethink_db = os.environ['RETHINK_DB']
+    config_rethink_table = os.environ['RETHINK_TABLE']
+    config_rethink_user = os.environ['RETHINK_USER']
+    config_rethink_pass = os.environ['RETHINK_PASS']
 
     # load the scraper
     scraper = Scraper(config_interval, config_offset)

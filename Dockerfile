@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM docker.io/library/python:3.7-alpine
 
 ENV SCRAPE_INTERVAL=5 \
     SCRAPE_OFFSET=10 \
@@ -18,4 +18,4 @@ COPY . ./
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD [python3.7 main.py]
+CMD python3.7 main.py
